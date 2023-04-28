@@ -4,7 +4,8 @@ import { Nunito } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar/Navbar'
 import ClientOnly from './components/ClientOnly'
-import Modal from "./components/Modals/Modal";
+import RegisterModal from "./components/Modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: 'Airdnd',
@@ -24,7 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
       <ClientOnly >
-          <Modal title="Hello world" isOpen />
+          <ToasterProvider />
+          <RegisterModal />
           <Navbar />
       </ClientOnly>
         {children}
