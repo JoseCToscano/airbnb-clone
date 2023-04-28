@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import ClientOnly from './components/ClientOnly'
 import RegisterModal from "./components/Modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
+import LoginModal from "@/app/components/Modals/LoginModal";
 
 export const metadata = {
   title: 'Airdnd',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <ClientOnly >
           <ToasterProvider />
           <RegisterModal />
+          <LoginModal />
           <Navbar />
       </ClientOnly>
         {children}
