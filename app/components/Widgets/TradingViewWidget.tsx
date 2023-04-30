@@ -19,9 +19,11 @@ const TradingViewWidget: React.FC<TradingWidgetProps> = ({tickerSymbol}) => {
     useEffect(() => {
 
 
+        // @ts-ignore
         onLoadScriptRef.current = () => {
             if (document.getElementById('tradingview_a90b4') && 'TradingView' in window) {
 
+                // @ts-ignore
                 const generatedWidget = new window.TradingView.widget({
                     whitelabel: "MYSELF",
                     width: 980,
@@ -58,6 +60,7 @@ const TradingViewWidget: React.FC<TradingWidgetProps> = ({tickerSymbol}) => {
             }
 
         tvScriptLoadingPromise.then(()=>{
+            // @ts-ignore
             typeof onLoadScriptRef.current === 'function' && onLoadScriptRef.current();
         })
 

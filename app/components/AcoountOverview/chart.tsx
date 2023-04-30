@@ -1,7 +1,7 @@
 import { Card, Title, LineChart } from "@tremor/react";
 import dayjs from "dayjs";
 
-const data = [];
+const data: {day: string, balance:number}[] = [];
 let balance = 1.0;
 
 for (let i = 100; i >= 1; i--) {
@@ -26,7 +26,7 @@ const Chart = () => (
             data={data}
             index="day"
             categories={["balance"]}
-            colors={["blue"]}
+            colors={["green"]}
             valueFormatter={dataFormatter}
             yAxisWidth={40}
             autoMinValue
