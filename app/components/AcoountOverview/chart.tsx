@@ -1,42 +1,35 @@
 import { Card, Title, LineChart } from "@tremor/react";
+import dayjs from "dayjs";
 
-const chartdata = [
-    {
-        year: 1951,
-        "Population growth rate": 1.74,
-    },
-    {
-        year: 1952,
-        "Population growth rate": 1.93,
-    },
-    {
-        year: 1953,
-        "Population growth rate": 1.9,
-    },
-    {
-        year: 1954,
-        "Population growth rate": 1.98,
-    },
-    {
-        year: 1955,
-        "Population growth rate": 2,
-    },
-];
+const data = [];
+let balance = 1.0;
+
+for (let i = 100; i >= 1; i--) {
+    const rand = Math.random();
+    if (rand < 0.2) {
+        balance -= parseFloat((Math.random() * 1.0).toFixed(2));
+    } else {
+        balance += parseFloat((Math.random() * 0.5).toFixed(2));
+    }
+    const day = dayjs().subtract(i, "day").format("MMM-DD");
+    data.push({ day, balance });
+}
 
 const dataFormatter = (number: number) =>
-    `${Intl.NumberFormat("us").format(number).toString()}%`;
+    `${(number*1000).toLocaleString("en-US", {currency: "USD", style: "currency"})}`;
 
 const Chart = () => (
     <Card className="mt-4">
-        <Title>Population growth rate (1951 to 2021)</Title>
+        <Title>Account Balance</Title>
         <LineChart
             className="mt-6"
-            data={chartdata}
-            index="year"
-            categories={["Population growth rate"]}
+            data={data}
+            index="day"
+            categories={["balance"]}
             colors={["blue"]}
             valueFormatter={dataFormatter}
             yAxisWidth={40}
+            autoMinValue
         />
     </Card>
 );
