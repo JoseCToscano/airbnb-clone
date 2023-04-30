@@ -37,4 +37,5 @@ next-env.d.ts
 
 # WebStorm IDE
 .idea/*
+.idea/workspace.xml
 .vscode/
