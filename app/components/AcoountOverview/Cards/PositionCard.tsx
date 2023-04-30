@@ -18,7 +18,10 @@ const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, 
     const decorationColor = positionBalance > 0 ? 'green' : 'red';
 
     return (
-        <Card decoration="top" decorationColor={decorationColor} onClick={()=>chartModal.onOpen(tickerSymbol)}>
+        <Card className={`
+        hover:bg-${decorationColor}-100 
+        hover:cursor-pointer 
+        `} decoration="top" decorationColor={decorationColor} onClick={()=>chartModal.onOpen(tickerSymbol)}>
             <Flex>
                 <Title>{tickerSymbol.replace('NASDAQ:','')}</Title>
                 <BadgeDelta deltaType={`${positionBalance > 0 ? "moderateIncrease" :"moderateDecrease"}`}>13.2%</BadgeDelta>
