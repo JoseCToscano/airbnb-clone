@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/AcoountOverview/DailyTracker/DailyTracker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/AcoountOverview/DayResultsCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/AcoountOverview/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/AcoountOverview/chart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Body/Body.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Cards/PositionCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bull.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/LoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/LoginModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -30,6 +45,31 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="stock-portfolio" />
+                    <option name="lastUsedInstant" value="1682802833" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1682802832" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,8 +98,11 @@
       <recent name="$PROJECT_DIR$/app/hooks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages/api/auth" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/app/components/AcoountOverview" />
+      <recent name="$PROJECT_DIR$/app/components" />
+      <recent name="$PROJECT_DIR$/app/playground" />
+      <recent name="$PROJECT_DIR$/app/components/Dashboard" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,6 +116,7 @@
       <workItem from="1682638481402" duration="4942000" />
       <workItem from="1682643926330" duration="3964000" />
       <workItem from="1682701086651" duration="2371000" />
+      <workItem from="1682802793715" duration="12570000" />
     </task>
     <servers />
   </component>

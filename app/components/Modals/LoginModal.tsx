@@ -38,8 +38,6 @@ const LoginModal = () => {
                 router.refresh();
             }
             registerModal.onClose();
-            // TODO: Voy en el minuto:
-            2:16:15
         })
         .catch((e)=>{
         toast.error(  'Something went wrong');

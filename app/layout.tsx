@@ -7,6 +7,8 @@ import ClientOnly from './components/ClientOnly'
 import RegisterModal from "./components/Modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "@/app/components/Modals/LoginModal";
+import Dashboard from "@/app/components/AcoountOverview/dashboard";
+import Body from "@/app/components/Body/Body";
 
 export const metadata = {
   title: 'Airdnd',
@@ -30,6 +32,9 @@ export default function RootLayout({
           <RegisterModal />
           <LoginModal />
           <Navbar />
+          <Body>
+              <Dashboard />
+          </Body>
       </ClientOnly>
         {children}
       </body>

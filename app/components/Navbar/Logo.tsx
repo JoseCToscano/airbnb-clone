@@ -8,9 +8,9 @@ const Logo = ()=>{
      <Image 
         alt="logo"
         className="hidden md:block cursor-pointer"
-        height="100"
-        width="100"
-        src="/images/airbnb-logo.png"
+        height="50"
+        width="50"
+        src="/images/bull.png"
     />
     );
 }
