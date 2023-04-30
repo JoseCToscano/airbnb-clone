@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/chart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
