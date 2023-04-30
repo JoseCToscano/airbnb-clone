@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Modals/ChartModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/hooks/useChartModal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Body/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Body/Body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Cards/PositionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,28 +73,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/josetoscano/Documents/t3-stack/airdnd/app/components/Modals&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/josetoscano/Documents/t3-stack/airdnd/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/josetoscano/Documents/t3-stack/airdnd/app/hooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/josetoscano/Documents/t3-stack/airdnd/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/components/Modals" />
       <recent name="$PROJECT_DIR$/app/hooks" />
+      <recent name="$PROJECT_DIR$/app/components/Modals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/components/AcoountOverview" />
       <recent name="$PROJECT_DIR$/app/components" />
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/playground" />
       <recent name="$PROJECT_DIR$/app/components/Dashboard" />
     </key>
@@ -102,7 +110,7 @@
       <workItem from="1682638481402" duration="4942000" />
       <workItem from="1682643926330" duration="3964000" />
       <workItem from="1682701086651" duration="2371000" />
-      <workItem from="1682802793715" duration="14333000" />
+      <workItem from="1682802793715" duration="19281000" />
     </task>
     <servers />
   </component>

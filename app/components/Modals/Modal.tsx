@@ -16,6 +16,7 @@ interface ModalProps {
     disabled?: boolean;
     secondaryAction?: () => void;
     secondaryActionLabel?: string;
+    adjustToContent?: boolean;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -28,7 +29,8 @@ const Modal: React.FC<ModalProps> = ({
                                          footer,
                                          disabled,
                                          secondaryAction,
-                                         secondaryActionLabel
+                                         secondaryActionLabel,
+                                         adjustToContent
                                      }) => {
     const [showModal, setShowModal] = useState(isOpen);
 
@@ -84,18 +86,15 @@ const Modal: React.FC<ModalProps> = ({
           bg-neutral-800/70
         "
             >
-                <div className="
+                <div className={`
           relative
-          w-full
-          md:w-4/6
-          lg:w-3/6
-          xl:w-2/5
+          ${adjustToContent ? 'w-auto' : 'w-full md:w-4/6 lg:w-3/6 xl:w-2/5'}
           my-6
           mx-auto
           h-full
           lg:h-auto
           md:h-auto
-          "
+          `}
                 >
                     {/*content*/}
                     <div className={`

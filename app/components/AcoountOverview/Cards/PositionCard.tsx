@@ -3,23 +3,24 @@
 import React from "react";
 import { Card, Metric, Legend, Divider, Title, Flex, Text, BadgeDelta, Badge } from "@tremor/react";
 import dayjs from "dayjs";
+import useChartModal from "@/app/hooks/useChartModal";
 
 interface PositionCardProps {
-    title: string;
+    tickerSymbol: string;
     positionBalance: number;
     openPrice: number;
     closePrice?: number;
     positionType: 'CALL' | 'PUT';
     positionSize: number;
 }
-const PositionCard: React.FC<PositionCardProps> = ({title, positionSize, positionBalance, openPrice, closePrice, positionType}) => {
-
+const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, positionBalance, openPrice, closePrice, positionType}) => {
+    const chartModal = useChartModal();
     const decorationColor = positionBalance > 0 ? 'green' : 'red';
 
     return (
-        <Card decoration="top" decorationColor={decorationColor}>
+        <Card decoration="top" decorationColor={decorationColor} onClick={()=>chartModal.onOpen(tickerSymbol)}>
             <Flex>
-                <Title>{title}</Title>
+                <Title>{tickerSymbol.replace('NASDAQ:','')}</Title>
                 <BadgeDelta deltaType={`${positionBalance > 0 ? "moderateIncrease" :"moderateDecrease"}`}>13.2%</BadgeDelta>
             </Flex>
             <Metric className={`

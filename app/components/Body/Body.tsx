@@ -7,7 +7,7 @@ interface BodyProps {
 }
 const Body: React.FC<BodyProps> = ({children}) => {
     return (
-        <div className="pt-16 bg-gray-100">
+        <div className="pt-32 bg-gray-100">
             {children}
         </div>
     )

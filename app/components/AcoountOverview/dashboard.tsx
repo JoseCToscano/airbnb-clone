@@ -4,7 +4,7 @@ import {Card, Metric, Text, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
 import dayjs from "dayjs";
 import 'dayjs/locale/es';
-import PositionCard from "@/app/components/Cards/PositionCard";
+import PositionCard from "@/app/components/AcoountOverview/Cards/PositionCard";
 import DailyTracker from "@/app/components/AcoountOverview/DailyTracker/DailyTracker";
 import DayResultsCard from "@/app/components/AcoountOverview/DayResultsCard";
 
@@ -104,12 +104,12 @@ export default function Dashboard() {
                 ))}
             </Grid>
             <Grid className="mt-4 gap-6 flex overflow-x-scroll" numCols={4}>
-                <PositionCard title="AAPL" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard title="QQQ" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard title="GOOG" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard title="IWM" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard title="TSLA" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
-                <PositionCard title="MSFT" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
+                <PositionCard tickerSymbol="NASDAQ:AAPL" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
+                <PositionCard tickerSymbol="NASDAQ:QQQ" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
+                <PositionCard tickerSymbol="NASDAQ:GOOG" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
+                <PositionCard tickerSymbol="AMEX:IWM" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
+                <PositionCard tickerSymbol="NASDAQ:TSLA" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
+                <PositionCard tickerSymbol="NASDAQ:MSFT" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
             </Grid>
             <Chart />
         </main>
