@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/Modals/ChartModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useChartModal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Widgets/LightWeightTrdingViewChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/stockbook-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Body/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Body/Body.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Cards/PositionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bull.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -92,11 +96,11 @@
       <recent name="$PROJECT_DIR$/app/components/Modals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/components/AcoountOverview" />
       <recent name="$PROJECT_DIR$/app/components" />
-      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/playground" />
-      <recent name="$PROJECT_DIR$/app/components/Dashboard" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,7 +114,7 @@
       <workItem from="1682638481402" duration="4942000" />
       <workItem from="1682643926330" duration="3964000" />
       <workItem from="1682701086651" duration="2371000" />
-      <workItem from="1682802793715" duration="19281000" />
+      <workItem from="1682802793715" duration="30301000" />
     </task>
     <servers />
   </component>
