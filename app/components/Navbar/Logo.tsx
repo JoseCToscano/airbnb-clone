@@ -10,7 +10,7 @@ const Logo = ()=>{
         className="hidden md:block cursor-pointer"
         height="180"
         width="180"
-        src="/images/stockbook-logo.png"
+        src="/images/profitbook-logo.png"
     />
     );
 }

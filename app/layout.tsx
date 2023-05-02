@@ -11,9 +11,10 @@ import Dashboard from "@/app/components/AcoountOverview/dashboard";
 import Body from "@/app/components/Body/Body";
 import ChartModal from "@/app/components/Modals/ChartModal";
 import LightWeightTrdingViewChart from "@/app/components/Widgets/LightWeightTrdingViewChart";
+import AddTradeModal from "@/app/components/Modals/AddTradeModal";
 
 export const metadata = {
-  title: 'Profitbook',
+  title: 'Profit Book',
   description: 'The first results-based social network for traders',
 }
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           <RegisterModal />
           <LoginModal />
           <ChartModal />
+          <AddTradeModal />
           <Navbar />
           <Body>
               <Dashboard />

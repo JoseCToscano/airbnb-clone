@@ -25,6 +25,7 @@ const RegisterModal = () => {
     });
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
+        setIsLoading(true);
         axios.post("/api/auth/register", data)
             .then(()=>{
                 registerModal.onClose();
@@ -39,7 +40,7 @@ const RegisterModal = () => {
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
-           <Heading title="Welcome to Airdnd" subtitle="Create an account" />
+           <Heading title="Welcome to Profitbook" subtitle="Create an account" />
             <Input id={"email"}
                    label="Email"
                    disabled={isLoading}

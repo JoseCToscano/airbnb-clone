@@ -1,6 +1,6 @@
 "use client";
 
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlinePlus } from 'react-icons/ai'
 import { useCallback, useState } from 'react';
 
 import useRegisterModal from "../../hooks/useRegisterModal";
@@ -8,10 +8,12 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 
 import Avatar from '../Avatar';
 import MenuItem from './MenuItem';
+import useAddTradeModal from "@/app/hooks/useAddTradeModal";
 
 const UserMenu = () => {
     const loginModal = useLoginModal();
     const registerModal = useRegisterModal();
+    const addTradeModal = useAddTradeModal();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleIsOpen = useCallback((value: boolean) => {
@@ -21,13 +23,17 @@ const UserMenu = () => {
     return (
         <div className="relative">
             <div className="flex flex-row itemrs-center gap-3">
-                <div 
-                    onClick={()=>{}}
-                    className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
+
+                <div
+                    onClick={addTradeModal.onOpen}
+                    className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
                 >
-                    Start sharing your progress
+                <div className="hidden md:block">
+                   Add trade
                 </div>
-                <div 
+                    < AiOutlinePlus />
+                </div>
+                <div
                     onClick={()=>toggleIsOpen(isOpen)}
                     className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
                 >
