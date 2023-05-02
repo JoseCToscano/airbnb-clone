@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/Inputs/DropdownInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useAddTradeModal.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profitbook-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/trade-history/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Modals/RegisterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/RegisterModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/stockbook-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Inputs/DropdownInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Inputs/DropdownInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>

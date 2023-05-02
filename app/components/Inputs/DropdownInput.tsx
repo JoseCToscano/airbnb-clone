@@ -34,7 +34,7 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
                 id={id}
                 className="mt-2"
                 onValueChange={(value) => console.log("The selected value is", value)}
-                placeholder="Render mode"
+                placeholder="Trade type"
                 disabled={disabled}
                 {...register(id, {required})}
             >

@@ -12,8 +12,10 @@ interface PositionCardProps {
     closePrice?: number;
     positionType: 'CALL' | 'PUT';
     positionSize: number;
+    openedAt: string | Date,
+    closedAt?: string | Date,
 }
-const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, positionBalance, openPrice, closePrice, positionType}) => {
+const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, positionBalance, openPrice, closePrice, positionType, openedAt, closedAt}) => {
     const chartModal = useChartModal();
     const decorationColor = positionBalance > 0 ? 'green' : 'red';
 
@@ -37,12 +39,12 @@ const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, 
             </Flex>
             <Legend
                 className="mt-3"
-                categories={[`Open ${dayjs().format('h:mm')} @ ${openPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`]}
+                categories={[`Open ${dayjs(openedAt).format('h:mm')} @ ${openPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`]}
                 colors={['green']}
             />
-            {closePrice && <Legend
+            {closePrice && closedAt && <Legend
                 className="mt-3"
-                categories={[`Closed ${dayjs().format('h:mm')} @ ${openPrice.toLocaleString('en-US', {
+                categories={[`Closed ${dayjs(closedAt).format('h:mm')} @ ${openPrice.toLocaleString('en-US', {
                     style: 'currency',
                     currency: 'USD'
                 })}`]}

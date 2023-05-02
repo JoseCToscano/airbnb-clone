@@ -7,6 +7,9 @@ import 'dayjs/locale/es';
 import PositionCard from "@/app/components/AcoountOverview/Cards/PositionCard";
 import DailyTracker from "@/app/components/AcoountOverview/DailyTracker/DailyTracker";
 import DayResultsCard from "@/app/components/AcoountOverview/DayResultsCard";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const website = [
     { name: '/home', value: 1230 },
@@ -79,7 +82,29 @@ const categories: {
     }
 ];
 
+type DayTrade = {
+    ticker: string,
+    positionBlance: number,
+    positionSize: number,
+    openedAt: string | Date,
+    closedAt?: string | Date,
+    openPrice: number,
+    closePrice?: number;
+    orderType: 'PUT' | 'CALL',
+}
 export default function Dashboard() {
+
+    const [dayTrades, setDayTrades] = useState<DayTrade[]>([]);
+
+    useEffect(() => {
+        axios.get<{trades: DayTrade[]}>('/api/trade-history').then((res) => {
+            console.log(res);
+            setDayTrades(res.data.trades);
+        }).catch((e)=>{
+            toast.error(  'Something went wrong');
+        })
+    },[]);
+
     return (
         <main className="p-4 md:p-10 mx-auto max-w-7xl">
             <Grid className="gap-6" numColsSm={2} numColsLg={2}>
@@ -104,12 +129,18 @@ export default function Dashboard() {
                 ))}
             </Grid>
             <Grid className="mt-4 gap-6 flex overflow-x-scroll" numCols={4}>
-                <PositionCard tickerSymbol="NASDAQ:AAPL" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard tickerSymbol="NASDAQ:QQQ" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard tickerSymbol="NASDAQ:GOOG" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard tickerSymbol="AMEX:IWM" positionBalance={324560.345} openPrice={0.05} positionType="CALL"  positionSize={150}/>
-                <PositionCard tickerSymbol="NASDAQ:TSLA" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
-                <PositionCard tickerSymbol="NASDAQ:MSFT" positionBalance={-360.345} openPrice={0.51} closePrice={0.34} positionType="PUT" positionSize={120}/>
+                {dayTrades.map((dayTrade, idx) => (
+                <PositionCard key={idx}
+                              tickerSymbol={dayTrade.ticker}
+                              positionBalance={dayTrade.positionBlance}
+                              openPrice={dayTrade.openPrice}
+                              positionType={dayTrade.orderType}
+                              positionSize={dayTrade.positionSize}
+                              closePrice={dayTrade.closePrice}
+                              closedAt={dayTrade.closedAt}
+                              openedAt={dayTrade.openedAt}
+                />
+                ))}
             </Grid>
             <Chart />
         </main>

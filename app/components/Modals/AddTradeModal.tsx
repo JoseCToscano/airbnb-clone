@@ -17,7 +17,7 @@ const AddTradeModal = () => {
     const {register, handleSubmit, formState: {errors}} = useForm<FieldValues>({
         defaultValues:{
             ticker: "",
-            quantity: "",
+            positionSize: "",
             openedAt: "",
             closedAt: "",
             openPrice: "",
@@ -53,7 +53,7 @@ const AddTradeModal = () => {
             </div>
             <div>
                 <Input
-                    id="quantity"
+                    id="positionSize"
                     label="Number of shares/contracts"
                     disabled={isLoading}
                     register={register}
