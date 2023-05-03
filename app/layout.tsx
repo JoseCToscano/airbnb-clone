@@ -10,9 +10,7 @@ import LoginModal from "@/app/components/Modals/LoginModal";
 import Dashboard from "@/app/components/AcoountOverview/dashboard";
 import Body from "@/app/components/Body/Body";
 import AddTradeModal from "@/app/components/Modals/AddTradeModal";
-import TradeSummaryModal from "@/app/components/Modals/TradeSummaryModal";
-import RightSidebar from "@/app/components/SideBars/RightSideBar";
-import TradeSummarySidebar from "@/app/components/SideBars/TradeSummarySidebar";
+import TradeSummarySidebar from "@/app/components/Sidebars/TradeSummarySidebar";
 
 export const metadata = {
   title: 'Profit Book',
@@ -35,7 +33,6 @@ export default function RootLayout({
           <ToasterProvider />
           <RegisterModal />
           <LoginModal />
-          {/*<TradeSummaryModal />*/}
           <AddTradeModal />
           <Navbar />
           <TradeSummarySidebar />
