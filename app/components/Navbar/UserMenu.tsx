@@ -1,6 +1,7 @@
 "use client";
 
 import { AiOutlineMenu, AiOutlinePlus } from 'react-icons/ai'
+import { TbPaperclip } from 'react-icons/all'
 import { useCallback, useState } from 'react';
 
 import useRegisterModal from "../../hooks/useRegisterModal";
@@ -11,6 +12,7 @@ import MenuItem from './MenuItem';
 import useAddTradeModal from "@/app/hooks/useAddTradeModal";
 import DropdownInput from "@/app/components/Inputs/DropdownInput";
 import {FieldValues, useForm} from "react-hook-form";
+import LoadTradeHistoryInput from "@/app/components/Navbar/LoadTradeHisttoryInput";
 
 const UserMenu = () => {
     const loginModal = useLoginModal();
@@ -33,6 +35,7 @@ const UserMenu = () => {
         <div className="relative">
 
             <div className="flex flex-row itemrs-center gap-3">
+                <LoadTradeHistoryInput />
                 <div
                     onClick={addTradeModal.onOpen}
                     className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
@@ -40,7 +43,7 @@ const UserMenu = () => {
                 <div className="hidden md:block">
                    Add trade
                 </div>
-                    < AiOutlinePlus />
+                    <AiOutlinePlus />
                 </div>
                 <div
                     onClick={()=>toggleIsOpen(isOpen)}

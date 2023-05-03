@@ -103,8 +103,10 @@ interface DailyTrackerProps {
     PLPercentage: number;
 }
 const DailyTracker: React.FC<DailyTrackerProps> = ({
-    selectedDate, PLPercentage, ordersTotal
-                                                   }) => (
+        selectedDate,
+        PLPercentage,
+        ordersTotal
+    }) => (
     <Card className="max-w mx-auto ">
         <Flex>
         <Title>Day trading</Title>
