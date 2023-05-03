@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, Metric, Legend, Divider, Title, Flex, Text, BadgeDelta, Badge } from "@tremor/react";
 import dayjs from "dayjs";
-import useChartModal from "@/app/hooks/useChartModal";
+import useTradeSummarySidebar from "@/app/hooks/useTradeSummarySidebar";
 
 interface PositionCardProps {
     tickerSymbol: string;
@@ -16,14 +16,14 @@ interface PositionCardProps {
     closedAt?: string | Date,
 }
 const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, positionBalance, openPrice, closePrice, positionType, openedAt, closedAt}) => {
-    const chartModal = useChartModal();
+    const tradeSummaryModal = useTradeSummarySidebar();
     const decorationColor = positionBalance > 0 ? 'green' : 'red';
 
     return (
         <Card className={`
         hover:bg-${decorationColor}-100 
         hover:cursor-pointer 
-        `} decoration="top" decorationColor={decorationColor} onClick={()=>chartModal.onOpen(tickerSymbol)}>
+        `} decoration="top" decorationColor={decorationColor} onClick={()=>tradeSummaryModal.onOpen(tickerSymbol)}>
             <Flex>
                 <Title>{tickerSymbol.replace('NASDAQ:','')}</Title>
                 <BadgeDelta deltaType={`${positionBalance > 0 ? "moderateIncrease" :"moderateDecrease"}`}>13.2%</BadgeDelta>

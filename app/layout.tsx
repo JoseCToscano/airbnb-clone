@@ -9,9 +9,10 @@ import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "@/app/components/Modals/LoginModal";
 import Dashboard from "@/app/components/AcoountOverview/dashboard";
 import Body from "@/app/components/Body/Body";
-import ChartModal from "@/app/components/Modals/ChartModal";
-import LightWeightTrdingViewChart from "@/app/components/Widgets/LightWeightTrdingViewChart";
 import AddTradeModal from "@/app/components/Modals/AddTradeModal";
+import TradeSummaryModal from "@/app/components/Modals/TradeSummaryModal";
+import RightSidebar from "@/app/components/SideBars/RightSideBar";
+import TradeSummarySidebar from "@/app/components/SideBars/TradeSummarySidebar";
 
 export const metadata = {
   title: 'Profit Book',
@@ -34,9 +35,10 @@ export default function RootLayout({
           <ToasterProvider />
           <RegisterModal />
           <LoginModal />
-          <ChartModal />
+          {/*<TradeSummaryModal />*/}
           <AddTradeModal />
           <Navbar />
+          <TradeSummarySidebar />
           <Body>
               <Dashboard />
           </Body>
