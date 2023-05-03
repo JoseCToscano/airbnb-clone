@@ -8,12 +8,13 @@ import {BiDollar} from "react-icons/all";
 
 interface DropdownInputProps{
     id: string;
-    label: string;
+    label?: string;
     register: UseFormRegister<FieldValues>;
     type?: string;
     disabled?: boolean;
     required?: boolean;
     errors: FieldErrors;
+    placeholder: string;
     options: Array<{value: string, text: string}>;
 }
 
@@ -25,16 +26,16 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
                                          disabled,
                                          required,
                                          errors,
-                                         options
+                                         options, placeholder
                                      })=>{
     return (
         <div className="w-full relative">
-            <Text>{label}</Text>
+            {label && <Text>{label}</Text>}
             <Dropdown
                 id={id}
                 className="mt-2"
                 onValueChange={(value) => console.log("The selected value is", value)}
-                placeholder="Trade type"
+                placeholder={placeholder}
                 disabled={disabled}
                 {...register(id, {required})}
             >

@@ -11,6 +11,7 @@ import Dashboard from "@/app/components/AcoountOverview/dashboard";
 import Body from "@/app/components/Body/Body";
 import AddTradeModal from "@/app/components/Modals/AddTradeModal";
 import TradeSummarySidebar from "@/app/components/Sidebars/TradeSummarySidebar";
+import ChartSidebar from "@/app/components/Sidebars/ChartSidebar";
 
 export const metadata = {
   title: 'Profit Book',
@@ -35,6 +36,7 @@ export default function RootLayout({
           <LoginModal />
           <AddTradeModal />
           <Navbar />
+          <ChartSidebar />
           <TradeSummarySidebar />
           <Body>
               <Dashboard />

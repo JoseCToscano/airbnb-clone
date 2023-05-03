@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import {HiOutlineArrowRightOnRectangle, HiArrowTopRightOnSquare, HiOutlineShare} from "react-icons/all";
-import TradingViewWidget from "@/app/components/Widgets/TradingViewWidget";
+import {HiOutlineArrowRightOnRectangle, HiArrowTopRightOnSquare, HiOutlineShare, VscGraphLine} from "react-icons/all";
 import {BadgeDelta, Divider, Flex, Legend, Metric, Text, Title} from "@tremor/react";
 import useTradeSummarySidebar from "@/app/hooks/useTradeSummarySidebar";
 import dayjs from "dayjs";
+import useChartSidebar from "@/app/hooks/useChartSidebar";
 
 
 const TradeSummarySidebar = () => {
     const sidebar = useTradeSummarySidebar();
-
+    const chartSidebar = useChartSidebar();
     if(!sidebar.position) {
         return <div>Error loading position summary</div>
     }
@@ -31,22 +31,30 @@ const TradeSummarySidebar = () => {
             {sidebar.isOpen && (
                 <div
                     className="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 opacity-50 z-40"
-                    onClick={sidebar.onClose}
+                    onClick={()=>{
+                        sidebar.onClose();
+                        chartSidebar.onClose();
+                    }
+                }
                 ></div>
             )}
 
             {/* Sidebar */}
             <div
-                className={`fixed top-0 right-0 bottom-0 w-5/9 bg-white z-50 ${
+                className={`fixed top-0 right-0 bottom-0 w-1/2 bg-white z-50 ${
                     sidebar.isOpen ? "translate-x-0" : "translate-x-full"
-                } transition-transform duration-300 ease-in-out shadow-md overflow-y-scroll`}
+                } transition-transform duration-300 ease-in-out shadow-md`}
             >
                 {/* Header */}
                 <div className="w-full bg-gray-100 flex items-center justify-start h-16 px-4 border-b border-gray-200">
                         <div className="flex flex-row items-center gap-2">
                             <div
                                 className="p-4 md:py-1 md:px-2 flex flex-row items-center gap-3 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-300 transition"
-                                onClick={sidebar.onClose}
+                                onClick={()=>{
+                                    sidebar.onClose();
+                                    chartSidebar.onClose();
+                                }
+                                }
                             >
                                 < HiOutlineArrowRightOnRectangle />
                             </div>
@@ -59,6 +67,12 @@ const TradeSummarySidebar = () => {
                                 className="p-4 md:py-1 md:px-2 flex flex-row items-center gap-3 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-300 transition"
                             >
                                 < HiOutlineShare />
+                            </div>
+                            <div
+                                className="p-4 md:py-1 md:px-2 flex flex-row items-center gap-3 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-300 transition"
+                                onClick={()=>chartSidebar.onOpen(ticker)}
+                            >
+                                < VscGraphLine /> Show chart for {chartSidebar.ticker} on {dayjs(openedAt).format('YYYY, MMM-DD @ h:mm')}
                             </div>
                         </div>
                 </div>
@@ -92,10 +106,51 @@ const TradeSummarySidebar = () => {
                         colors={['red']}
                     />}
                 </div>
-                <div className="p-6">
-                    <Title>Chart</Title>
-                    <TradingViewWidget tickerSymbol={ticker} />
-                </div>
+                {/* Bottom section */}
+                <div className="h-1/2 overflow-y-scroll">
+
+                    {/* Comments section */}
+                    <div className="red-200 p-4 mb-4">
+                        <h3 className="text-lg font-bold mb-2">Comments</h3>
+                        <ul>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 1</li>
+                            <li className="mb-2">Comment 2</li>
+                            <li className="mb-2">Comment 3</li>
+                            {/* Add more comments here */}
+                        </ul>
+                    </div>
+            </div>
             </div>
         </>
     );

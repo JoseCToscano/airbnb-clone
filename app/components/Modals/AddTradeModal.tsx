@@ -67,6 +67,7 @@ const AddTradeModal = () => {
                     label={"Trade type"}
                     options={[{value: "call", text: "CALL"}, {value: "put", text: "PUT"}]}
                     register={register}
+                    placeholder={"Select a trade type"}
                     errors={errors} />
             </div>
             <div>

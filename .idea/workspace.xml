@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/Loading/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Sidebars/TradeSummarySidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trades/[id]/SingleTrade.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trades/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Sidebars/ChartSidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/hooks/useChartSidebar.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Body/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Body/Body.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Modals/TradeSummaryModal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SideBars/RightSideBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/SideBars/TradeSummarySidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/hooks/useTradeSummarySidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/hooks/useTradeSummarySidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Inputs/DropdownInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Inputs/DropdownInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/UserMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Sidebars/TradeSummarySidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Sidebars/TradeSummarySidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +77,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/josetoscano/Documents/t3-stack/airdnd/app/components/Loading",
+    "last_opened_file_path": "/Users/josetoscano/Documents/t3-stack/airdnd/app/hooks",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,9 +89,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/components/Loading" />
-      <recent name="$PROJECT_DIR$/app/components/Modals" />
       <recent name="$PROJECT_DIR$/app/hooks" />
+      <recent name="$PROJECT_DIR$/app/components/Modals" />
+      <recent name="$PROJECT_DIR$/app/components/Loading" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/trades/[id]" />
@@ -115,7 +113,7 @@
       <workItem from="1682643926330" duration="3964000" />
       <workItem from="1682701086651" duration="2371000" />
       <workItem from="1682802793715" duration="30301000" />
-      <workItem from="1683044862828" duration="8889000" />
+      <workItem from="1683044862828" duration="13372000" />
     </task>
     <servers />
   </component>

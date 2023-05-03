@@ -25,7 +25,7 @@ const TradingViewWidget: React.FC<TradingWidgetProps> = ({tickerSymbol}) => {
 
                 // @ts-ignore
                 const generatedWidget = new window.TradingView.widget({
-                    whitelabel: "MYSELF",
+                    whitelabel: "Profitbook",
                     width: 980,
                     height: 610,
                     symbol: tickerSymbol,
