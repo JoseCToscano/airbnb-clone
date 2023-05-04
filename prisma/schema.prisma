@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
+  provider     = "postgresql"
+  url          = env("POSTGRES_PRISMA_URL")
   relationMode = "prisma"
 }
 
@@ -21,10 +21,11 @@ model User {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 
-  accounts     Account[]
-  sessions     Session[]
-  listings     Listing[]
-  reservations Reservation[]
+  books Book[]
+
+  // Next-Auth specific relations
+  accounts Account[]
+  sessions Session[]
 }
 
 model Account {
@@ -44,6 +45,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([userId])
 }
 
 model Session {
@@ -52,6 +54,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 model VerificationToken {
@@ -62,33 +66,98 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Listing {
-  id            String   @id @default(cuid())
-  title         String
-  description   String
-  imageSrc      String
-  createdAt     DateTime @default(now())
-  category      String
-  roomCount     Int
-  bathroomCount Int
-  guestCount    Int
-  locationView  String
-  userId        String
-  price         Float
+model Book {
+  id           String        @id @default(cuid())
+  createdAt    DateTime      @default(now())
+  alias        String
+  type         AccountType
+  transactions Transaction[]
 
-  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  reservations Reservation[]
+  // Broker specific fields
+  brokerId        String
+  Broker          Broker @relation(fields: [brokerId], references: [id])
+  brokerAccountId String
+
+  // User specific fields
+  userId   String
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Position Position[]
+
+  // Indexes
+  @@index([userId])
+  @@index([brokerId, brokerAccountId], name: "broker_account_id")
 }
 
-model Reservation {
-  id         String   @id @default(cuid())
-  userId     String
-  listingId  String
-  startDate  DateTime
-  endDate    DateTime
-  totalPrice Float
-  createdAt  DateTime @default(now())
+model Broker {
+  id   String @id @default(cuid())
+  name String
 
-  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  transactions Transaction[]
+  books        Book[]
+}
+
+model Transaction {
+  id String @id @default(cuid())
+
+  transactionDate DateTime
+  description     String
+  quantity        Int
+  symbol          String
+  price           Float
+  commission      Float
+  amount          Float
+  fees            Float
+
+  // Broker specific fields
+  brokerId            String
+  brokerTransactionId String
+  brokerAccountId     String
+
+  broker Broker  @relation(fields: [brokerId], references: [id])
+  Book   Book?   @relation(fields: [bookId], references: [id])
+  bookId String?
+
+  openPosition  Position[] @relation(name: "openPosition")
+  closePosition Position[] @relation(name: "closePosition")
+
+  @@index([brokerId, brokerTransactionId], name: "broker_transaction_id")
+  @@index([bookId])
+}
+
+model Position {
+  id String @id @default(cuid())
+
+  ticker          String
+  positionSize    Int
+  openedAt        DateTime
+  closedAt        DateTime
+  openPrice       Float
+  closePrice      Float
+  positionBalance Float
+  orderType       OrderType
+
+  openTransaction    Transaction? @relation(name: "openPosition", fields: [openTransactionId], references: [id])
+  closeTransaction   Transaction? @relation(name: "closePosition", fields: [closeTransactionId], references: [id])
+  openTransactionId  String?
+  closeTransactionId String?
+
+  bookId String
+  Book   Book   @relation(fields: [bookId], references: [id])
+
+  @@index([bookId])
+  @@index([ticker])
+  @@index([openTransactionId])
+  @@index([closeTransactionId])
+}
+
+enum AccountType {
+  PAPER
+  LIVE
+}
+
+enum OrderType {
+  BUY
+  SELL
+  PUT
+  CALL
 }
