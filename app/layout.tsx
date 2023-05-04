@@ -2,16 +2,7 @@ import React from 'react';
 import { Nunito } from 'next/font/google'
 
 import './globals.css'
-import Navbar from './components/Navbar/Navbar'
-import ClientOnly from './components/ClientOnly'
-import RegisterModal from "./components/Modals/RegisterModal";
-import ToasterProvider from "./providers/ToasterProvider";
-import LoginModal from "@/app/components/Modals/LoginModal";
-import Dashboard from "@/app/components/AcoountOverview/dashboard";
-import Body from "@/app/components/Body/Body";
-import AddTradeModal from "@/app/components/Modals/AddTradeModal";
-import TradeSummarySidebar from "@/app/components/Sidebars/TradeSummarySidebar";
-import ChartSidebar from "@/app/components/Sidebars/ChartSidebar";
+import TRPCWrapper from "@/app/components/Widgets/TRPCWrapper";
 
 export const metadata = {
   title: 'Profit Book',
@@ -28,21 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  return (
+    return (
     <html lang="en">
       <body className={font.className}>
-      <ClientOnly >
-          <ToasterProvider />
-          <RegisterModal />
-          <LoginModal />
-          <AddTradeModal />
-          <Navbar />
-          <ChartSidebar />
-          <TradeSummarySidebar />
-          <Body>
-              <Dashboard />
-          </Body>
-      </ClientOnly>
+        <TRPCWrapper />
           {children}
       </body>
     </html>

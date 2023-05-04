@@ -1,5 +1,4 @@
 
-import {trpc} from "@/app/utils/trpc";
 const Home = () => {
 return (
     <div>

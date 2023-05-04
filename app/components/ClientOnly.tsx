@@ -3,7 +3,6 @@
 import React from "react";
 
 import { useEffect, useState } from "react";
-import {trpc} from "@/app/utils/trpc";
 
 interface ClientOnlyProps{
     children: React.ReactNode;
@@ -26,4 +25,4 @@ const ClientOnly: React.FC<ClientOnlyProps> = ({children})=>{
     );
 }
 
-export default trpc.withTRPC(ClientOnly);
+export default ClientOnly;
