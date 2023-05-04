@@ -1,6 +1,7 @@
 "use client";
 
-import {CgClose, TbPaperclip} from 'react-icons/all'
+import {CgClose} from 'react-icons/cg'
+import { TbPaperclip} from 'react-icons/tb'
 import React, { useCallback, useState } from 'react';
 import Image from "next/image";
 import Button from "@/app/components/Button";

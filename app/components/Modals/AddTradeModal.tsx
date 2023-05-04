@@ -1,42 +1,58 @@
 "use client";
 
-import { useState } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm} from "react-hook-form";
 
 import Modal from "./Modal";
-import Heading from "../Heading";
 import Input from "../Inputs/Input";
 import useAddTradeModal from "@/app/hooks/useAddTradeModal";
-import DropdownInput from "@/app/components/Inputs/DropdownInput";
+import {api} from "@/app/utils/api";
 
 const AddTradeModal = () => {
     const addTradeModal = useAddTradeModal();
-    const [isLoading, setIsLoading] = useState(false);
-    const {register, handleSubmit, formState: {errors}} = useForm<FieldValues>({
+
+    const {register, reset, handleSubmit, formState: {errors}} = useForm<FieldValues>({
         defaultValues:{
             ticker: "",
-            positionSize: "",
+            positionSize: 0,
             openedAt: "",
             closedAt: "",
-            openPrice: "",
+            openPrice: 0,
             closePrice: "",
+            positionBalance: 0,
+            orderType: "",
         }
     });
+    const ctx = api.useContext();
+
+    const { mutate, isLoading: isPosting } = api.trades.add.useMutation({
+        onSuccess: ()=>{
+            void ctx.trades.getAll.invalidate();
+            toast.success("Trade added successfully!");
+            addTradeModal.onClose();
+            reset();
+        },
+        onError: (e)=>{
+            const errorMessage = e.data?.zodError?.fieldErrors.content;
+            if(errorMessage && errorMessage[0]){
+                toast.error(errorMessage[0]);
+            } else{
+                toast.error( 'Failed to post! Please try again later')
+            }
+        }
+    })
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        setIsLoading(true);
-        axios.post("/api/trade-history", data)
-            .then(()=>{
-                addTradeModal.onClose();
-            })
-            .catch((e)=>{
-            toast.error(  'Something went wrong');
-            })
-            .finally(()=>{
-                setIsLoading(false);
-            })
+       mutate({
+              ticker: data.ticker,
+                positionSize: Number(data.positionSize),
+                openedAt: data.openedAt,
+                closedAt: data.closedAt,
+                openPrice: Number(data.openPrice),
+                closePrice: Number(data.closePrice),
+                positionBalance: Number(data.positionBalance),
+                orderType: data.orderType,
+       });
     };
 
     const bodyContent = (
@@ -45,7 +61,7 @@ const AddTradeModal = () => {
                 <Input
                     id="ticker"
                     label="Company's ticker symbol (e.g. AAPL)"
-                    disabled={isLoading}
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
@@ -55,26 +71,34 @@ const AddTradeModal = () => {
                 <Input
                     id="positionSize"
                     label="Number of shares/contracts"
-                    disabled={isLoading}
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
                 />
             </div>
             <div>
-                <DropdownInput
-                    id={"typeOfTrade"}
-                    label={"Trade type"}
-                    options={[{value: "call", text: "CALL"}, {value: "put", text: "PUT"}]}
-                    register={register}
-                    placeholder={"Select a trade type"}
-                    errors={errors} />
-            </div>
-            <div>
+                {/*<DropdownInput*/}
+                {/*    id={"typeOfTrade"}*/}
+                {/*    label={"Trade type"}*/}
+                {/*    options={[{value: "call", text: "CALL"}, {value: "put", text: "PUT"}]}*/}
+                {/*    register={register}*/}
+                {/*    placeholder={"Select a trade type"}*/}
+                {/*    errors={errors} />*/}
                 <Input
                     id={"openedAt"}
                     label="Opened at"
-                    disabled={isLoading}
+                    disabled={isPosting}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+            <div>
+                <Input
+                    id={"positionBalance"}
+                    label="Position balance"
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
@@ -84,7 +108,7 @@ const AddTradeModal = () => {
                 <Input
                     id={"closedAt"}
                     label="Closed at"
-                    disabled={isLoading}
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
@@ -94,7 +118,7 @@ const AddTradeModal = () => {
                 <Input
                     id={"openPrice"}
                     label="Open price"
-                    disabled={isLoading}
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
@@ -104,7 +128,17 @@ const AddTradeModal = () => {
                 <Input
                     id={"closePrice"}
                     label="Close price"
-                    disabled={isLoading}
+                    disabled={isPosting}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+            <div>
+                <Input
+                    id={"orderType"}
+                    label="Order type"
+                    disabled={isPosting}
                     register={register}
                     errors={errors}
                     required
@@ -127,10 +161,10 @@ const AddTradeModal = () => {
     )
 
     return (
-        <Modal disabled={isLoading}
+        <Modal disabled={isPosting}
                isOpen={addTradeModal.isOpen}
                title={"Register a new Trade"}
-               actionLabel={isLoading ? "Saving trade..." : "Save trade"}
+               actionLabel={(isPosting) ? "Saving trade..." : "Save trade"}
                onClose={addTradeModal.onClose}
                onSubmit={handleSubmit(onSubmit)}
                body={bodyContent}

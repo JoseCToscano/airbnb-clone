@@ -72,7 +72,6 @@ const Modal: React.FC<ModalProps> = ({
     return (
         <>
             <div
-                onClick={onClose}
                 className="
                   justify-center
                   items-center

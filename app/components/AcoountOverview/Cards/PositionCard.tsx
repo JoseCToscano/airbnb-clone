@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Card, Metric, Legend, Divider, Title, Flex, Text, BadgeDelta, Badge } from "@tremor/react";
+import { Card, Metric, Legend, Divider, Title, Flex, Text, BadgeDelta } from "@tremor/react";
 import dayjs from "dayjs";
 import useTradeSummarySidebar from "@/app/hooks/useTradeSummarySidebar";
+import {marketRegex} from "@/app/components/Widgets/TradingViewWidget";
 
 interface PositionCardProps {
     tickerSymbol: string;
@@ -34,7 +35,7 @@ const PositionCard: React.FC<PositionCardProps> = ({tickerSymbol, positionSize, 
             orderType: positionType,
         })}>
             <Flex>
-                <Title>{tickerSymbol.replace('NASDAQ:','')}</Title>
+                <Title>{tickerSymbol.replace(marketRegex,'')}</Title>
                 <BadgeDelta deltaType={`${positionBalance > 0 ? "moderateIncrease" :"moderateDecrease"}`}>13.2%</BadgeDelta>
             </Flex>
             <Metric className={`

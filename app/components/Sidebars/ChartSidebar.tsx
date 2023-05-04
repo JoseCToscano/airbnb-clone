@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MdKeyboardDoubleArrowDown } from "react-icons/all";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import useChartSidebar from "@/app/hooks/useChartSidebar";
 import TradingViewWidget from "@/app/components/Widgets/TradingViewWidget";
 

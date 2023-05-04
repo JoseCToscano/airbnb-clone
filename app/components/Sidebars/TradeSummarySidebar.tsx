@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import {HiOutlineArrowRightOnRectangle, HiArrowTopRightOnSquare, HiOutlineShare, VscGraphLine} from "react-icons/all";
+import {HiOutlineArrowRightOnRectangle, HiArrowTopRightOnSquare, HiOutlineShare } from "react-icons/hi2";
+import { VscGraphLine } from "react-icons/vsc";
 import {BadgeDelta, Divider, Flex, Legend, Metric, Text, Title} from "@tremor/react";
 import useTradeSummarySidebar from "@/app/hooks/useTradeSummarySidebar";
 import dayjs from "dayjs";
 import useChartSidebar from "@/app/hooks/useChartSidebar";
+import {marketRegex} from "@/app/components/Widgets/TradingViewWidget";
 
 
 const TradeSummarySidebar = () => {
@@ -80,7 +82,7 @@ const TradeSummarySidebar = () => {
                 {/* Content */}
                 <div className="relative p-10 flex-auto">
                     <Flex>
-                        <Title>{ticker.replace('NASDAQ:','')}</Title>
+                        <Title>{ticker.replace(marketRegex,'')}</Title>
                         <BadgeDelta deltaType={`${positionBalance > 0 ? "moderateIncrease" :"moderateDecrease"}`}>13.2%</BadgeDelta>
                     </Flex>
                     <Metric className={`

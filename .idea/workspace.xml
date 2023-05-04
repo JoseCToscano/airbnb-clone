@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e707cc-1e01-46ff-b355-6bb547e4590c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/server/api/root.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server/api/routers/trades.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server/api/trpc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server/db.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server/hardcodedDB.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/trpc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/trpc/[trpc].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/trade-history/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/Cards/PositionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AcoountOverview/dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ClientOnly.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ClientOnly.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Inputs/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Inputs/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/AddTradeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Modals/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Navbar/LoadTradeHisttoryInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar/LoadTradeHisttoryInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Sidebars/ChartSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Sidebars/ChartSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Sidebars/TradeSummarySidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Sidebars/TradeSummarySidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Widgets/TradingViewWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -68,7 +92,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/josetoscano/Documents/t3-stack/airdnd/public/images",
+    "last_opened_file_path": "/Users/josetoscano/Documents/t3-stack/airdnd/pages/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,17 +104,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/api" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/hooks" />
       <recent name="$PROJECT_DIR$/app/components/Modals" />
       <recent name="$PROJECT_DIR$/app/components/Loading" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/server/api" />
       <recent name="$PROJECT_DIR$/app/api" />
       <recent name="$PROJECT_DIR$/app/trades/[id]" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/pages" />
-      <recent name="$PROJECT_DIR$/app/trades" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -105,7 +130,9 @@
       <workItem from="1682643926330" duration="3964000" />
       <workItem from="1682701086651" duration="2371000" />
       <workItem from="1682802793715" duration="30301000" />
-      <workItem from="1683044862828" duration="21683000" />
+      <workItem from="1683044862828" duration="24472000" />
+      <workItem from="1683168945030" duration="36000" />
+      <workItem from="1683169194135" duration="7291000" />
     </task>
     <servers />
   </component>

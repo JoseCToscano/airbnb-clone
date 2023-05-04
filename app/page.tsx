@@ -1,7 +1,11 @@
 
-
-export default function Home() {
-  return (
-    <div className="text-rose-500 tet-2xl"> Hello Profitbook! </div>
-  )
+import {trpc} from "@/app/utils/trpc";
+const Home = () => {
+return (
+    <div>
+        <h1>Hello from homepage</h1>
+    </div>
+)
 }
+
+export default Home

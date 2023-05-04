@@ -7,53 +7,8 @@ import 'dayjs/locale/es';
 import PositionCard from "@/app/components/AcoountOverview/Cards/PositionCard";
 import DailyTracker from "@/app/components/AcoountOverview/DailyTracker/DailyTracker";
 import DayResultsCard from "@/app/components/AcoountOverview/DayResultsCard";
-import {useEffect, useState} from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
-
-const website = [
-    { name: '/home', value: 1230 },
-    { name: '/contact', value: 751 },
-    { name: '/gallery', value: 471 },
-    { name: '/august-discount-offer', value: 280 },
-    { name: '/case-studies', value: 78 }
-];
-
-const shop = [
-    { name: '/home', value: 453 },
-    { name: '/imprint', value: 351 },
-    { name: '/shop', value: 271 },
-    { name: '/pricing', value: 191 }
-];
-
-const app = [
-    { name: '/shop', value: 789 },
-    { name: '/product-features', value: 676 },
-    { name: '/about', value: 564 },
-    { name: '/login', value: 234 },
-    { name: '/downloads', value: 191 }
-];
-
-const data = [
-    {
-        category: 'Website',
-        stat: '10,234',
-        data: website
-    },
-    {
-        category: 'Online Shop',
-        stat: '12,543',
-        data: shop
-    },
-    {
-        category: 'Mobile App',
-        stat: '2,543',
-        data: app
-    }
-];
-
-const dataFormatter = (number: number) =>
-    Intl.NumberFormat('us').format(number).toString();
+import {api} from "@/app/utils/api";
+import {LoadingSpinner} from "@/app/components/Loading/loading";
 
 const categories: {
     title: string;
@@ -81,29 +36,12 @@ const categories: {
         prevMetricLabel: `Today's positions`
     }
 ];
-
-type DayTrade = {
-    ticker: string,
-    positionBlance: number,
-    positionSize: number,
-    openedAt: string | Date,
-    closedAt?: string | Date,
-    openPrice: number,
-    closePrice?: number;
-    orderType: 'PUT' | 'CALL',
-}
 export default function Dashboard() {
+    const trades = api.trades.getAll.useQuery();
 
-    const [dayTrades, setDayTrades] = useState<DayTrade[]>([]);
-
-    useEffect(() => {
-        axios.get<{trades: DayTrade[]}>('/api/trade-history').then((res) => {
-            console.log(res);
-            setDayTrades(res.data.trades);
-        }).catch((e)=>{
-            toast.error(  'Something went wrong');
-        })
-    },[]);
+    if (!trades.data) {
+        return <LoadingSpinner />;
+    }
 
     return (
         <main className="p-4 md:p-10 mx-auto max-w-7xl">
@@ -129,12 +67,12 @@ export default function Dashboard() {
                 ))}
             </Grid>
             <Grid className="mt-4 gap-6 flex overflow-x-scroll" numCols={4}>
-                {dayTrades.map((dayTrade, idx) => (
+                {trades.data.trades.map((dayTrade, idx) => (
                 <PositionCard key={idx}
                               tickerSymbol={dayTrade.ticker}
-                              positionBalance={dayTrade.positionBlance}
+                              positionBalance={dayTrade.positionBalance}
                               openPrice={dayTrade.openPrice}
-                              positionType={dayTrade.orderType}
+                              positionType={dayTrade.orderType as "CALL" | "PUT"}
                               positionSize={dayTrade.positionSize}
                               closePrice={dayTrade.closePrice}
                               closedAt={dayTrade.closedAt}

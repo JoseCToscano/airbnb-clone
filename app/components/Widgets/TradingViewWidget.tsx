@@ -1,30 +1,27 @@
 "use client";
 // import React, { useEffect, useRef } from 'react';
 
-const marketRegex = /(NASDAQ|NYSE|BCBA|AMEX)/;
+export const marketRegex = /(NASDAQ:|NYSE:|BCBA:|AMEX:)/;
 interface TradingWidgetProps {
     tickerSymbol: string;
 }
 
 
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef } from 'react';
 
 let tvScriptLoadingPromise: Promise<Event> | undefined;
 
 const TradingViewWidget: React.FC<TradingWidgetProps> = ({tickerSymbol}) => {
     const onLoadScriptRef = useRef();
-    const [widget, setWidget] = useState();
 
     useEffect(() => {
-
-
         // @ts-ignore
         onLoadScriptRef.current = () => {
             if (document.getElementById('tradingview_a90b4') && 'TradingView' in window) {
 
                 // @ts-ignore
-                const generatedWidget = new window.TradingView.widget({
+                new window.TradingView.widget({
                     whitelabel: "Profitbook",
                     width: 980,
                     height: 610,
@@ -43,7 +40,6 @@ const TradingViewWidget: React.FC<TradingWidgetProps> = ({tickerSymbol}) => {
                 });
 
 
-                setWidget(generatedWidget);
             }
         }
 
