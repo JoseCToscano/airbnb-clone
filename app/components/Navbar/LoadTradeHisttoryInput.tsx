@@ -22,7 +22,7 @@ const LoadTradeHistoryInput = () => {
             <div className="flex flex-row items-center gap-3">
                 <div
                     onClick={()=>toggleIsOpen(isOpen)}
-                    className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-md cursor-pointer hover:shadow-md transition"
+                    className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-lg cursor-pointer hover:shadow-md transition"
                 >
                     <div className="hidden md:block">
                         Load trade history
