@@ -39,10 +39,6 @@ const categories: {
 export default function Dashboard() {
     const trades = api.trades.getAll.useQuery();
 
-    if (!trades.data) {
-        return <LoadingSpinner />;
-    }
-
     return (
         <main className="p-4 md:p-10 mx-auto max-w-7xl">
             <Grid className="gap-6" numColsSm={2} numColsLg={2}>
@@ -67,7 +63,8 @@ export default function Dashboard() {
                 ))}
             </Grid>
             <Grid className="mt-4 gap-6 flex overflow-x-scroll" numCols={4}>
-                {trades.data.trades.map((dayTrade, idx) => (
+                {trades.isLoading && <LoadingSpinner/>}
+                {trades?.data?.trades.map((dayTrade, idx) => (
                 <PositionCard key={idx}
                               tickerSymbol={dayTrade.ticker}
                               positionBalance={dayTrade.positionBalance}
